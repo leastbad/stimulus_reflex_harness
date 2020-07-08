@@ -1,5 +1,17 @@
-<button data-reflex="click->Example#test">Test</button>
-
-<% if @stimulus_reflex %>
-  <h1>Success! Random: <%= (rand * 100).to_i %></h1>
-<% end %>
+<div data-controller="example">
+  <div id="text">Text node</div><br>
+  <div id="element"><span>Element node</span></div><br>
+  <div id="text_permanent" data-reflex-permanent>Text permanent</div><br>
+  <div id="element_permanent" data-reflex-permanent><span>Element permanent</span></div><br>
+  <br>
+  <button data-reflex="click->Example#no_html">No HTML</button><br>
+  <button data-reflex="click->Example#empty_string">Empty String</button><br>
+  <button data-reflex="click->Example#string">String</button><br>
+  <button data-reflex="click->Example#simulated_partial">Simulated Partial</button><br>
+  <button data-reflex="click->Example#malformed">Malformed</button><br>
+  <button data-reflex="click->Example#nodename">nodename</button><br>
+  <button data-reflex="click->Example#new_id">New ID</button><br>
+  <button data-reflex="click->Example#nestled">Nestled</button><br>
+  <button data-reflex="click->Example#multiple">Multiple</button><br>
+  <button data-reflex="click->Example#reversed_multiple">Reversed Multiple</button><br>
+</div>
