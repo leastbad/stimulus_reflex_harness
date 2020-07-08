@@ -3,10 +3,6 @@
 class ExampleReflex < ApplicationReflex
   delegate :uuid, to: :connection
 
-  def test
-    morph "#sam", "<div id='sam'>sam</div><div id='jim'>jim</div>"
-  end
-
   def no_html
     morph "#text"
     morph "#element"
