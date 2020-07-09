@@ -77,7 +77,13 @@ GEM
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
+    faker (2.13.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
+    futurism (0.1.1)
+      cable_ready (>= 4)
+      rack (~> 2.0)
+      rails (>= 6, >= 5.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hiredis (0.6.3)
@@ -200,6 +206,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   cable_ready (~> 4.3)
+  faker
+  futurism
   hiredis
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
