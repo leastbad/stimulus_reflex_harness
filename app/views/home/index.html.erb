@@ -1,6 +1,6 @@
 <table>
   <tbody>
-    <%= futurize @posts do %>
+    <%= futurize @posts, extends: :tr do %>
       <td class="placeholder"></td>
     <% end %>
   </tbody>
