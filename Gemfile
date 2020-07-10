@@ -13,7 +13,7 @@ gem "hiredis"
 gem "stimulus_reflex", github: "hopsoft/stimulus_reflex", branch: "master"
 gem "cable_ready", "~> 4.3"
 
-gem "futurism"
+gem "futurism", github: "julianrubisch/futurism", branch: "master"
 gem "faker"
 
 group :development, :test do
