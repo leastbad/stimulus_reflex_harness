@@ -1,8 +1,27 @@
-⬇️ You'd better get scrolling...⬇️
-<table style="margin-top: 1000px">
+<h1>Futurism is now</h1>
+<div style="margin-bottom: 1000px">⬇️ You'd better get scrolling...⬇️</div>
+
+<h2>Ordered List</h2>
+<ol>
+  <%= futurize @posts, extends: :li do %>
+    x
+  <% end %>
+</ol>
+
+<% comment do %>
+<h2>DIVs</h2>
+<%= futurize @posts, extends: :div, style: "height: 100px" do %>
+  x
+<% end %>
+<% end %>
+
+<% comment do %>
+<h2>TRs</h2>
+<table>
   <tbody>
     <%= futurize @posts, extends: :tr, style: "height: 100px" do %>
       <td class="placeholder"></td>
     <% end %>
   </tbody>
 </table>
+<% end %>
