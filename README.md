@@ -1,6 +1,6 @@
-# StimulusReflex test harness app
+# Futurism test harness
 
-Purpose: Verify a bare-bones SR application. Branch it to build MVCEs.
+Purpose: Verify a bare-bones **Futurism** example
 
 Prerequisites: Postgres and Redis
 
@@ -8,7 +8,7 @@ Preamble: `bundle config local.stimulus_reflex /path/to/stimulus_reflex`
 
 Point your `stimulus_reflex` to the correct local branch in `Gemfile`
 
-To install: `bundle install && yarn install && rake db:setup && rake db:migrate`
+To install: `bundle install && yarn install && rake db:setup && rake db:migrate && rake db:seed`
 
 Optional: `bin/webpack-dev-server`
 
