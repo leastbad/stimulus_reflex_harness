@@ -4,14 +4,14 @@
 <h2>Ordered List</h2>
 <ol>
   <%= futurize @posts, extends: :li do %>
-    x
+    &nbsp;
   <% end %>
 </ol>
 
 <% comment do %>
 <h2>DIVs</h2>
 <%= futurize @posts, extends: :div, style: "height: 100px" do %>
-  x
+  &nbsp;
 <% end %>
 <% end %>
 
