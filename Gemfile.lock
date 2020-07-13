@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/julianrubisch/futurism.git
-  revision: 3982886a136d8ad14423840932e0409623b5470b
+  revision: 1303bb081c7e394fde8dd017c673665731527281
   branch: suggestions
   specs:
     futurism (0.1.1)

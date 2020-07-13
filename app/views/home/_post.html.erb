@@ -1,4 +1,9 @@
+<dt><%= post.title %></dt>
+<dd><%= Faker::Address.country %></dd>
+
+<% comment do %>
 <li><%= post.title %></li>
+<% end %>
 
 <% comment do %>
 <div style="height: 100px"><%= post.title %></div>

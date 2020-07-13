@@ -1,16 +1,25 @@
 <h1>Futurism is now</h1>
 <div style="margin-bottom: 1000px">⬇️ You'd better get scrolling...⬇️</div>
 
+<h2>Description List</h2>
+<dl>
+  <%= futurize :dt, @posts do %>
+    <dt>&nbsp;</dt>
+  <% end %>
+</dl>
+
+<% comment do %>
 <h2>Ordered List</h2>
 <ol>
-  <%= futurize @posts, extends: :li do %>
+  <%= futurize :li, @posts do %>
     &nbsp;
   <% end %>
 </ol>
+<% end %>
 
 <% comment do %>
 <h2>DIVs</h2>
-<%= futurize @posts, extends: :div, style: "height: 100px" do %>
+<%= futurize :div, @posts, style: "height: 100px" do %>
   &nbsp;
 <% end %>
 <% end %>
@@ -19,7 +28,7 @@
 <h2>TRs</h2>
 <table>
   <tbody>
-    <%= futurize @posts, extends: :tr, style: "height: 100px" do %>
+    <%= futurize :tr, @posts, style: "height: 100px" do %>
       <td class="placeholder"></td>
     <% end %>
   </tbody>
