@@ -11,10 +11,10 @@ GIT
 
 GIT
   remote: https://github.com/julianrubisch/futurism.git
-  revision: 1303bb081c7e394fde8dd017c673665731527281
+  revision: 343138fd19917915bef0e0a98d33d99080d46be6
   branch: suggestions
   specs:
-    futurism (0.1.1)
+    futurism (0.1.2)
       cable_ready (>= 4)
       rack (~> 2.0)
       rails (>= 6)

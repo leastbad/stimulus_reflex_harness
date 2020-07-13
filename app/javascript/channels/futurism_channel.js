@@ -1,4 +1,3 @@
-import consumer from './consumer'
 import CableReady from 'cable_ready'
 
 const debounceEvents = (callback, delay = 250) => {
@@ -16,25 +15,27 @@ const debounceEvents = (callback, delay = 250) => {
 }
 
 const futureHandler = debounceEvents(events => {
-  subscription.send({ sgids: events.map(e => e.target.dataset.sgid) })
+  this.send({ sgids: events.map(e => e.target.dataset.sgid) })
 }, 1)
 
-const subscription = consumer.subscriptions.create('Futurism::Channel', {
-  connected () {
-    window.Futurism = this
-    document.addEventListener('futurism:appear', futureHandler)
-  },
+export const createSubscription = consumer => {
+  consumer.subscriptions.create('Futurism::Channel', {
+    connected () {
+      window.Futurism = this
+      document.addEventListener('futurism:appear', futureHandler.bind(this))
+    },
 
-  disconnected () {
-    window.Futurism = undefined
-    document.removeEventListener('futurism:appear', futureHandler)
-  },
+    disconnected () {
+      window.Futurism = undefined
+      document.removeEventListener('futurism:appear', futureHandler.bind(this))
+    },
 
-  received (data) {
-    if (data.cableReady) {
-      CableReady.perform(data.operations, {
-        emitMissingElementWarnings: false
-      })
+    received (data) {
+      if (data.cableReady) {
+        CableReady.perform(data.operations, {
+          emitMissingElementWarnings: false
+        })
+      }
     }
-  }
-})
+  })
+}

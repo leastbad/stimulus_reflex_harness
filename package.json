@@ -2,6 +2,7 @@
   "name": "harness",
   "private": true,
   "dependencies": {
+    "@minthesize/futurism": "^0.1.3",
     "@rails/actioncable": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
