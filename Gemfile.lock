@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: 0e51422dfef82a8da25a40a96a3844b4a60daeb5
+  revision: bc16bf23e0245a1cb4777ff3efdd1fd43a9018a5
   branch: master
   specs:
-    stimulus_reflex (3.3.0.pre0)
+    stimulus_reflex (3.3.0.pre1)
       cable_ready (>= 4.1.2)
       nokogiri
       rack
