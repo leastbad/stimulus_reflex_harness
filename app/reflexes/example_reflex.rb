@@ -10,6 +10,13 @@ class ExampleReflex < ApplicationReflex
     morph "#element_permanent"
   end
 
+  def number
+    morph "#text", 5
+    morph "#element", 5
+    morph "#text_permanent", 5
+    morph "#element_permanent", 5
+  end
+
   def empty_string
     morph "#text", ""
     morph "#element", ""
