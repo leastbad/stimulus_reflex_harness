@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: 4f74675c03be7d4f23c058d496bcb0ce83626b27
-  branch: morph-refactor
+  revision: bc16bf23e0245a1cb4777ff3efdd1fd43a9018a5
+  branch: master
   specs:
     stimulus_reflex (3.3.0.pre1)
       cable_ready (>= 4.1.2)

@@ -10,7 +10,7 @@ gem "webpacker", "~> 4.0"
 gem "redis", ">= 4.0", require: ["redis", "redis/connection/hiredis"]
 gem "hiredis"
 
-gem "stimulus_reflex", github: "hopsoft/stimulus_reflex", branch: "morph-refactor"
+gem "stimulus_reflex", github: "hopsoft/stimulus_reflex", branch: "master"
 gem "cable_ready", "~> 4.3"
 
 group :development, :test do
