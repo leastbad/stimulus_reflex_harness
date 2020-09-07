@@ -6640,10 +6640,6 @@ stimulus@^1.1.1:
     "@stimulus/core" "^1.1.1"
     "@stimulus/webpack-helpers" "^1.1.1"
 
-stimulus_reflex@hopsoft/stimulus_reflex#master:
-  version "0.0.0"
-  resolved "https://codeload.github.com/hopsoft/stimulus_reflex/tar.gz/bc16bf23e0245a1cb4777ff3efdd1fd43a9018a5"
-
 stream-browserify@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.2.tgz#87521d38a44aa7ee91ce1cd2a47df0cb49dd660b"

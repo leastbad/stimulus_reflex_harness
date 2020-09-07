@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: bc16bf23e0245a1cb4777ff3efdd1fd43a9018a5
-  branch: master
+  revision: 1dae8819642ac3e2084445709602f175a602a775
+  branch: after_reflex
   specs:
-    stimulus_reflex (3.3.0.pre1)
+    stimulus_reflex (3.3.0.pre3)
       cable_ready (>= 4.1.2)
       nokogiri
       rack
@@ -199,7 +199,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  cable_ready (~> 4.3)
+  cable_ready (= 4.3.0)
   hiredis
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

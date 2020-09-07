@@ -1,37 +1,32 @@
 import ApplicationController from './application_controller'
 
-/* This is the custom StimulusReflex controller for ExampleReflex.
- * Learn more at: https://docs.stimulusreflex.com
- */
 export default class extends ApplicationController {
-  /* Reflex specific lifecycle methods.
-   * Use methods similar to this example to handle lifecycle concerns for a specific Reflex method.
-   * Using the lifecycle is optional, so feel free to delete these stubs if you don't need them.
-   *
-   * Example:
-   *
-   *   <a href="#" data-reflex="ExampleReflex#example">Example</a>
-   *
-   * Arguments:
-   *
-   *   element - the element that triggered the reflex
-   *             may be different than the Stimulus controller's this.element
-   *
-   *   reflex - the name of the reflex e.g. "ExampleReflex#example"
-   *
-   *   error - error message from the server
-   */
+  connect () {
+    super.connect()
+    // console.log('example controller: connect')
 
-  // beforeUpdate(element, reflex) {
-  //  element.innerText = 'Updating...'
-  // }
+    this.element.addEventListener('cable-ready:before-morph', e => {
+      // console.log(e.detail)
+    })
 
-  // updateSuccess(element, reflex) {
-  //   element.innerText = 'Updated Successfully.'
-  // }
+    this.element.addEventListener('stimulus-reflex:after', e => {
+      console.log('event', e.detail)
+    })
+  }
 
-  // updateError(element, reflex, error) {
-  //   console.error('updateError', error);
-  //   element.innerText = 'Update Failed!'
-  // }
+  test = () => {
+    const reflex = this.stimulate('Example#test')
+    console.log(reflex.reflexId)
+    reflex.then(payload => console.log('promise', payload))
+  }
+
+  beforeReflex (element, reflex) {
+    super.beforeReflex()
+    // console.log('example controller: beforeReflex', element, reflex)
+  }
+
+  afterReflex (element, reflex, error, reflexId) {
+    super.afterReflex()
+    console.log('callback', reflexId)
+  }
 }

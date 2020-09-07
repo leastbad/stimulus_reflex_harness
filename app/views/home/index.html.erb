@@ -1,5 +1,12 @@
-<button data-reflex="click->Example#test">Test</button>
+<div id="example" data-controller="example">
+  <button data-action="click->example#test">Test</button>
 
-<% if @stimulus_reflex %>
-  <h1>Success! Random: <%= (rand * 100).to_i %></h1>
-<% end %>
+  <% if @stimulus_reflex %>
+    <h1>Success! Random: <%= (rand * 100).to_i %></h1>
+  <% end %>
+</div>
+
+<br>
+<div id="target1"><span>Will it work?</span></div><br>
+<div id="target2"><span>But how well?</span></div><br>
+<div id="target3"><span>What about inner_html?</span></div>
