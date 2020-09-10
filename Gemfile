@@ -12,6 +12,9 @@ gem "hiredis"
 
 gem "stimulus_reflex", github: "hopsoft/stimulus_reflex", branch: "master"
 gem "cable_ready", "~> 4.3"
+gem "devise"
+gem "acts_as_tenant"
+gem "faker"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

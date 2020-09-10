@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class ExampleReflex < ApplicationReflex
-  delegate :uuid, to: :connection
-
   def test
+    Project.create :name => Faker::Name.name
     puts "We're live!"
   end
 end

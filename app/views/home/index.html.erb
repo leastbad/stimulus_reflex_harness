@@ -1,5 +1,14 @@
 <button data-reflex="click->Example#test">Test</button>
 
+<br><br>
+
+<p><%= current_user.email if current_user %></p>
+<p><%= current_account.name if current_account %></p>
+
 <% if @stimulus_reflex %>
   <h1>Success! Random: <%= (rand * 100).to_i %></h1>
+<% end %>
+
+<% Project.all.each do | project | %>
+  <p><%= project.name %></p>
 <% end %>
