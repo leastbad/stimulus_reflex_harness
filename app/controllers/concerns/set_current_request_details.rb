@@ -34,6 +34,6 @@ module SetCurrentRequestDetails
 
   def fallback_account
     return unless user_signed_in?
-    current_user.accounts.order(created_at: :asc).first || current_user.create_default_account
+    current_user.accounts.order(created_at: :asc).first
   end
 end
