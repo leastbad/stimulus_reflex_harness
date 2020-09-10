@@ -13,7 +13,7 @@ module SetCurrentRequestDetails
     Current.user_agent = request.user_agent
     Current.ip_address = request.ip
     Current.user = current_user
-    Current.account ||= account_from_domain || account_from_subdomain || account_from_session || fallback_account
+    Current.account ||= account_from_domain || account_from_subdomain || fallback_account
 
     set_current_tenant(Current.account)
   end
@@ -25,11 +25,6 @@ module SetCurrentRequestDetails
   def account_from_subdomain
     return unless request.subdomains.size > 0
     Account.find_by(subdomain: request.subdomains.first)
-  end
-
-  def account_from_session
-    return unless user_signed_in?
-    current_user.accounts.find_by(id: session[:account_id])
   end
 
   def fallback_account
