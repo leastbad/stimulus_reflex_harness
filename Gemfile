@@ -10,8 +10,10 @@ gem 'webpacker', '~> 4.0'
 gem "redis", ">= 4.0", :require => ["redis", "redis/connection/hiredis"]
 gem "hiredis"
 
-gem "stimulus_reflex", github: "hopsoft/stimulus_reflex", branch: "params"
+gem "stimulus_reflex" #, github: "hopsoft/stimulus_reflex", branch: "params"
 gem "cable_ready", "~> 4.3"
+gem "devise"
+gem "devise-jwt"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -2,6 +2,6 @@
 
 class ExampleReflex < ApplicationReflex
   def test
-    puts "My name is #{current_user}!"
+    puts "My email is #{current_user.email}!"
   end
 end

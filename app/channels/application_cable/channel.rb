@@ -15,8 +15,9 @@ module ApplicationCable
     end
 
     def decode_user(token)
-      token == "xxx" ? "Steve" : nil
+      Warden::JWTAuth::UserDecoder.new.call token, :user, nil if token
+    rescue JWT::DecodeError
+      nil
     end
-    
   end
 end
