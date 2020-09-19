@@ -6,6 +6,8 @@
     <%= csp_meta_tag %>
     <%= action_cable_meta_tag %>
 
+    <meta name="action-cable-auth-token" content="<%= @token %>"/>
+
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>

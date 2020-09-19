@@ -9,5 +9,10 @@ import controller from './application_controller'
 
 const application = Application.start()
 const context = require.context('controllers', true, /_controller\.js$/)
+const params = {
+  token: document.querySelector('meta[name=action-cable-auth-token]').content
+}
+const debug = true
+
 application.load(definitionsFromContext(context))
-StimulusReflex.initialize(application, { consumer, controller, debug: true })
+StimulusReflex.initialize(application, { consumer, controller, params, debug })
