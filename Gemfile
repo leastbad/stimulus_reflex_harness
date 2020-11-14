@@ -10,7 +10,7 @@ gem 'webpacker', '~> 4.0'
 gem "redis", ">= 4.0", :require => ["redis", "redis/connection/hiredis"]
 gem "hiredis"
 
-gem "stimulus_reflex", "~> 3.3.0" # github: "hopsoft/stimulus_reflex", branch: "master"
+gem "stimulus_reflex", github: "hopsoft/stimulus_reflex"
 gem "cable_ready", "~> 4.3"
 
 group :development, :test do
