@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: "home#index"
+  resources :widgets
+  root to: "widgets#index"
 end
