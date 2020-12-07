@@ -6,4 +6,8 @@ class ExampleReflex < ApplicationReflex
   def test
     puts "We're live!"
   end
+
+  def speedtest
+    morph :nothing
+  end
 end
