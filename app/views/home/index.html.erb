@@ -1,5 +1,727 @@
-<button data-reflex="click->Example#test">Test</button>
+<div>
+  <button data-reflex="click->Runner#test">Run CR tests</button>
+</div>
 
-<% if @stimulus_reflex %>
-  <h1>Success! Random: <%= (rand * 100).to_i %></h1>
-<% end %>
+<h1>DOM Operations</h1>
+
+<h2 id="inner_html">inner_html</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="inner_html">
+    <td data-events-target="before"></td>
+    <td><i>CableReady rocks</i></td>
+    <td id="inner_html-1" data-events-target="element">Pre-operation</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="inner_html">
+    <td data-events-target="before"></td>
+    <td><i>CableReady rocks multi</i></td>
+    <td class="inner_html-2" data-events-target="element">Pre-operation 1</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="inner_html">
+    <td data-events-target="before"></td>
+    <td><i>CableReady rocks multi</i></td>
+    <td class="inner_html-2" data-events-target="element">Pre-operation 2</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="inner_html">
+    <td data-events-target="before"></td>
+    <td><i>CableReady rocks multi</i></td>
+    <td class="inner_html-2" data-events-target="element">Pre-operation 3</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="inner_html">
+    <td data-events-target="before"></td>
+    <td><i>Post-operation</i></td>
+    <td id="inner_html-3" data-controller="cancel" data-events-target="element" data-cancel-operation-value="inner_html">Pre-operation</td>
+    <td data-events-target="after"></td>
+    <td id="inner_html-cancelled"></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="inner_html">
+    <td data-events-target="before"></td>
+    <td><i>CableReady XPath</i></td>
+    <td data-events-target="element">Pre-operation</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+</table>
+
+<b>Focus target:</b> <input type="text" id="inner_html-focus" data-controller="received-focus">
+
+<h2 id="insert_adjacent_html">insert_adjacent_html</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="insert_adjacent_html">
+    <td data-events-target="before"></td>
+    <td><span>Nate Hopkins</span>&nbsp;<span>beforeend</span></td>
+    <td id="insert_adjacent_html-1" data-events-target="element"><span>Nate Hopkins</span>&nbsp;</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="insert_adjacent_html">
+    <td data-events-target="before"></td>
+    <td><span>afterbegin</span>&nbsp;<span>Nate Hopkins</span></td>
+    <td id="insert_adjacent_html-2" data-events-target="element">&nbsp;<span>Nate Hopkins</span></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="insert_adjacent_html">
+    <td data-events-target="before"></td>
+    <td><span>Nate Hopkins</span>&nbsp;<span>beforeend</span></td>
+    <td id="insert_adjacent_html-3" data-controller="cancel" data-events-target="element" data-cancel-operation-value="insert_adjacent_html"><span>Nate Hopkins</span>&nbsp;</td>
+    <td data-events-target="after"></td>
+    <td id="insert_adjacent_html-cancelled"></td>
+  </tr>
+</table>
+
+<b>Focus target:</b> <input type="text" id="insert_adjacent_html-focus" data-controller="received-focus">
+
+<h2 id="insert_adjacent_text">insert_adjacent_text</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="insert_adjacent_text">
+    <td data-events-target="before"></td>
+    <td>Nate Hopkins beforeend</td>
+    <td id="insert_adjacent_text-1" data-events-target="element">Nate Hopkins </td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="insert_adjacent_text">
+    <td data-events-target="before"></td>
+    <td>afterbegin Nate Hopkins</td>
+    <td id="insert_adjacent_text-2" data-events-target="element"> Nate Hopkins</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="insert_adjacent_text">
+    <td data-events-target="before"></td>
+    <td>Nate Hopkins beforeend</td>
+    <td id="insert_adjacent_text-3" data-controller="cancel" data-events-target="element" data-cancel-operation-value="insert_adjacent_text">Nate Hopkins </td>
+    <td data-events-target="after"></td>
+    <td id="insert_adjacent_text-cancelled"></td>
+  </tr>
+</table>
+
+<b>Focus target:</b> <input type="text" id="insert_adjacent_text-focus" data-controller="received-focus">
+
+<h2 id="morph">morph</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="morph">
+    <td data-events-target="before"></td>
+    <td><span>Nate Hopkins Full</span></td>
+    <td id="morph-1" data-events-target="element"><span>Nate Hopkins</span></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="morph">
+    <td data-events-target="before"></td>
+    <td><span>Nate Hopkins Children</span></td>
+    <td id="morph-2" data-events-target="element"><span>Nate Hopkins</span></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="morph">
+    <td data-events-target="before"></td>
+    <td><span>Post-operation</span></td>
+    <td id="morph-3" data-controller="cancel" data-events-target="element" data-cancel-operation-value="morph"><span>Pre-operation</span></td>
+    <td data-events-target="after"></td>
+    <td id="morph-cancelled"></td>
+  </tr>
+</table>
+
+<b>Focus target:</b> <input type="text" id="morph-focus" data-controller="received-focus">
+
+<h2 id="outer_html">outer_html</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="outer_html">
+    <td data-events-target="before"></td>
+    <td><span>Nate Hopkins Replaced</span></td>
+    <td id="outer_html-1" data-events-target="element"><span>Nate Hopkins</span></td>
+    <td data-controller="events" data-events-operation-value="outer_html" data-events-target="after" data-events-document-value="true"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="outer_html">
+    <td data-events-target="before"></td>
+    <td><span>Post-operation</span></td>
+    <td id="outer_html-2" data-controller="cancel" data-events-target="element" data-cancel-operation-value="outer_html"><span>Pre-operation</span></td>
+    <td data-events-target="after"></td>
+    <td id="outer_html-cancelled"></td>
+  </tr>
+</table>
+
+<b>Focus target:</b> <input type="text" id="outer_html-focus" data-controller="received-focus">
+
+<h2 id="remove">remove</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove">
+    <td data-events-target="before"></td>
+    <td>[Deleted]</td>
+    <td><span id="remove-1" data-events-target="element">Nate Hopkins</span></td>
+    <td data-controller="events" data-events-operation-value="remove" data-events-target="after" data-events-document-value="true"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove">
+    <td data-events-target="before"></td>
+    <td></td>
+    <td><span id="remove-2" data-controller="cancel" data-events-target="element" data-cancel-operation-value="remove">Pre-operation</span></td>
+    <td data-controller="events" data-events-operation-value="remove" data-events-target="after" data-events-document-value="true"></td>
+    <td id="remove-cancelled"></td>
+  </tr>
+</table>
+
+<b>Focus target:</b> <input type="text" id="remove-focus" data-controller="received-focus">
+
+<h2 id="text_content">text_content</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="text_content">
+    <td data-events-target="before"></td>
+    <td>Nate Hopkins Text</td>
+    <td id="text_content-1" data-events-target="element">Nate Hopkins</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="text_content">
+    <td data-events-target="before"></td>
+    <td>Post-operation</td>
+    <td id="text_content-2" data-controller="cancel" data-events-target="element" data-cancel-operation-value="text_content">Pre-operation</td>
+    <td data-events-target="after"></td>
+    <td id="text_content-cancelled"></td>
+  </tr>
+</table>
+
+<b>Focus target:</b> <input type="text" id="text_content-focus" data-controller="received-focus">
+
+<h2 id="add_css_class">add_css_class</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="add_css_class">
+    <td data-events-target="before"></td>
+    <td class="red">Nate Hopkins</td>
+    <td id="add_css_class-1" data-events-target="element">Nate Hopkins</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="add_css_class">
+    <td data-events-target="before"></td>
+    <td class="red">Nate Hopkins</td>
+    <td id="add_css_class-2" data-controller="cancel" data-events-target="element" data-cancel-operation-value="add_css_class">Nate Hopkins</td>
+    <td data-events-target="after"></td>
+    <td id="add_css_class-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="remove_attribute">remove_attribute</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove_attribute">
+    <td data-events-target="before"></td>
+    <td><input value="Nate"></td>
+    <td><input id="remove_attribute-1" data-events-target="element" disabled value="Nate"></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove_attribute">
+    <td data-events-target="before"></td>
+    <td><input value="Nate"></td>
+    <td><input id="remove_attribute-2" data-events-target="element" disabled value="Nate" data-controller="cancel" data-cancel-operation-value="remove_attribute"></td>
+    <td data-events-target="after"></td>
+    <td id="remove_attribute-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="remove_css_class">remove_css_class</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove_css_class">
+    <td data-events-target="before"></td>
+    <td>Nate Hopkins</td>
+    <td id="remove_css_class-1" class="red" data-events-target="element">Nate Hopkins</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove_css_class">
+    <td data-events-target="before"></td>
+    <td>Nate Hopkins</td>
+    <td id="remove_css_class-2" class="red" data-controller="cancel" data-events-target="element" data-cancel-operation-value="remove_css_class">Nate Hopkins</td>
+    <td data-events-target="after"></td>
+    <td id="remove_css_class-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="set_attribute">set_attribute</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_attribute">
+    <td data-events-target="before"></td>
+    <td><input placeholder="Nate"></td>
+    <td><input id="set_attribute-1" data-events-target="element"></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_attribute">
+    <td data-events-target="before"></td>
+    <td><input placeholder="Nate"></td>
+    <td><input id="set_attribute-2" data-controller="cancel" data-events-target="element" data-cancel-operation-value="set_attribute"></td>
+    <td data-events-target="after"></td>
+    <td id="set_attribute-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="set_dataset_property">set_dataset_property</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_dataset_property">
+    <td data-events-target="before"></td>
+    <td data-id="1">&nbsp;</td>
+    <td id="set_dataset_property-1" data-events-target="element">&nbsp;</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_dataset_property">
+    <td data-events-target="before"></td>
+    <td data-id="1">&nbsp;</td>
+    <td id="set_dataset_property-2" data-controller="cancel" data-events-target="element" data-cancel-operation-value="set_dataset_property">&nbsp;</td>
+    <td data-events-target="after"></td>
+    <td id="set_dataset_property-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="set_property">set_property</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_property">
+    <td data-events-target="before"></td>
+    <td dir="rtl" style="text-align:start;">Right to left</td>
+    <td id="set_property-1" style="text-align:start;" data-events-target="element">Right to left</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_property">
+    <td data-events-target="before"></td>
+    <td dir="rtl" style="text-align:start;">Right to left</td>
+    <td id="set_property-2" style="text-align:start;" data-events-target="element" data-controller="cancel" data-cancel-operation-value="set_property">Right to left</td>
+    <td data-events-target="after"></td>
+    <td id="set_property-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="set_style">set_style</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_style">
+    <td data-events-target="before"></td>
+    <td style="font-size: 20px">Nate</td>
+    <td id="set_style-1" data-events-target="element">Nate</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_style">
+    <td data-events-target="before"></td>
+    <td style="font-size: 20px">Nate</td>
+    <td id="set_style-2" data-events-target="element" data-controller="cancel" data-cancel-operation-value="set_style">Nate</td>
+    <td data-events-target="after"></td>
+    <td id="set_style-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="set_styles">set_styles</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_styles">
+    <td data-events-target="before"></td>
+    <td style="font-size: 20px; color: orange;">Nate</td>
+    <td id="set_styles-1" data-events-target="element">Nate</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_styles">
+    <td data-events-target="before"></td>
+    <td style="font-size: 20px; color: orange;">Nate</td>
+    <td id="set_styles-2" data-events-target="element" data-controller="cancel" data-cancel-operation-value="set_styles">Nate</td>
+    <td data-events-target="after"></td>
+    <td id="set_styles-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="set_value">set_value</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_value">
+    <td data-events-target="before"></td>
+    <td><input value="Nate"></td>
+    <td><input id="set_value-1" data-events-target="element"></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_value">
+    <td data-events-target="before"></td>
+    <td><input value="Nate"></td>
+    <td><input id="set_value-2" data-events-target="element" data-controller="cancel" data-cancel-operation-value="set_value"></td>
+    <td data-events-target="after"></td>
+    <td id="set_value-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="dispatch_event">dispatch_event</h2>
+
+<table>
+  <tr>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+  </tr>
+  <tr>
+    <td>{"firstName":"Nate","lastName":"Hopkins"}</td>
+    <td id="dispatch_event-1" data-controller="dispatch-event"></td>
+  </tr>
+</table>
+
+<h2 id="push_state">push_state</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Pushstate</th>
+    <th>Popstate</th>
+    <th>Before Event</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="push_state" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>{"firstName":"Nate","lastName":"Hopkins"}</td>
+    <td>🤷</td>
+    <td data-events-target="after"></td>
+  </tr>
+</table>
+
+<h2 id="set_cookie">set_cookie</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_cookie" data-events-id-value="1" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo=cancelled</td>
+    <td data-events-target="element"></td>
+    <td data-events-target="after"></td>
+    <td id="set_cookie-cancelled" data-controller="cancel" data-cancel-operation-value="set_cookie" data-cancel-document-value="true"></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_cookie" data-events-id-value="2" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo=bar</td>
+    <td data-controller="cookie-changed" data-events-target="element"></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 id="set_focus">set_focus</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Expected Value</th>
+    <th>Outcome</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_focus">
+    <td data-events-target="before"></td>
+    <td><input style="background-color: lightgreen">&nbsp;</td>
+    <td><input id="set_focus-1" data-controller="received-focus" data-events-target="element"></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_focus">
+    <td data-events-target="before"></td>
+    <td><input style="background-color: lightgreen">&nbsp;</td>
+    <td><input id="set_focus-2" data-events-target="element" data-controller="received-focus cancel" data-cancel-operation-value="set_focus"></td>
+    <td data-events-target="after"></td>
+    <td id="set_focus-cancelled"></td>
+  </tr>
+</table>
+
+<h2 id="set_storage_item">set_storage_item</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Type</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_storage_item" data-events-id-value="1" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo1</td>
+    <td data-controller="storage" data-storage-id-value="1"></td>
+    <td>local</td>
+    <td data-events-target="after"></td>
+    <td id="set_storage_item-cancelled" data-controller="cancel" data-cancel-operation-value="set_storage_item" data-cancel-document-value="true"></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_storage_item" data-events-id-value="2" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo2</td>
+    <td data-controller="storage" data-storage-id-value="2"></td>
+    <td>local</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_storage_item" data-events-id-value="3" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo3</td>
+    <td data-controller="storage" data-storage-id-value="3"></td>
+    <td>local</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_storage_item" data-events-id-value="4" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo4</td>
+    <td data-controller="storage" data-storage-id-value="4"></td>
+    <td>local</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_storage_item" data-events-id-value="5" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo5</td>
+    <td data-controller="storage" data-storage-id-value="5"></td>
+    <td>session</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_storage_item" data-events-id-value="6" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo6</td>
+    <td data-controller="storage" data-storage-id-value="6"></td>
+    <td>session</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="set_storage_item" data-events-id-value="7" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo7</td>
+    <td data-controller="storage" data-storage-id-value="7"></td>
+    <td>session</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 id="remove_storage_item">remove_storage_item</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Type</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove_storage_item" data-events-id-value="2" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo2</td>
+    <td data-controller="storage" data-storage-remove-value="true" data-storage-id-value="2"></td>
+    <td>local</td>
+    <td data-events-target="after"></td>
+    <td id="remove_storage_item-cancelled" data-controller="cancel" data-cancel-operation-value="remove_storage_item" data-cancel-document-value="true"></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove_storage_item" data-events-id-value="2" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo3</td>
+    <td data-controller="storage" data-storage-remove-value="true" data-storage-id-value="3"></td>
+    <td>local</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="remove_storage_item" data-events-id-value="2" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>foo5</td>
+    <td data-controller="storage" data-storage-remove-value="true" data-storage-id-value="5"></td>
+    <td>session</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 id="clear_storage">clear_storage</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>Type</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="clear_storage" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>local</td>
+    <td data-events-target="after"></td>
+    <td id="clear_storage-cancelled" data-controller="cancel" data-cancel-operation-value="clear_storage" data-cancel-document-value="true"></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="clear_storage" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>local</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="clear_storage" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td>session</td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 id="notification">notification</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="notification" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td data-events-target="after"></td>
+    <td id="notification-cancelled" data-controller="cancel" data-cancel-operation-value="notification" data-cancel-document-value="true"></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="notification" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+</table>
+
+<br>
+
+<a href="#" target="_top" id="bottom">Back to top</a>
+
+<br><br><br><br>
