@@ -700,6 +700,10 @@
   </tr>
 </table>
 
+<h2 id="console_log">console_log</h2>
+
+Open Console Inspector to see logged messages.
+
 <h2 id="notification">notification</h2>
 
 <table>
@@ -714,6 +718,26 @@
     <td id="notification-cancelled" data-controller="cancel" data-cancel-operation-value="notification" data-cancel-document-value="true"></td>
   </tr>
   <tr data-controller="events" data-events-operation-value="notification" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td data-events-target="after"></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 id="play_sound">play_sound</h2>
+
+<table>
+  <tr>
+    <th>Before Event</th>
+    <th>After Event</th>
+    <th>Cancelled</th>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="play_sound" data-events-id-value="1" data-events-document-value="true">
+    <td data-events-target="before"></td>
+    <td data-events-target="after"></td>
+    <td id="play_sound-cancelled" data-controller="cancel" data-cancel-operation-value="play_sound" data-cancel-document-value="true"></td>
+  </tr>
+  <tr data-controller="events" data-events-operation-value="play_sound" data-events-id-value="2" data-events-document-value="true">
     <td data-events-target="before"></td>
     <td data-events-target="after"></td>
     <td></td>

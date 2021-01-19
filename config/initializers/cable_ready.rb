@@ -1,3 +1,3 @@
-CableReady::Channels.configure do |config|
-  config.add_operation :jazz_hands
+CableReady.configure do |config|
+  config.add_operation_name :jazz_hands
 end

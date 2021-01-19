@@ -1,15 +1,16 @@
 GIT
   remote: https://github.com/hopsoft/cable_ready.git
-  revision: 2d4f6b3be8f826acca437288c08c76fd1785a795
-  branch: multi-selector
+  revision: 45c487645e5cce66216d2c2419556b305907368f
+  branch: hopsoft/custom-operations
   specs:
     cable_ready (4.4.6)
       rails (>= 5.2)
+      thread-local (>= 1.1.0)
 
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: f4870c8fa4ec65159662e95a93456bb02ad9821e
-  branch: fix_element
+  revision: 17547c01b5fad845878e9fd0e5ecc09c292b6e14
+  branch: hopsoft/cr-conig
   specs:
     stimulus_reflex (3.4.0)
       cable_ready (>= 4.4)
@@ -186,6 +187,7 @@ GEM
       rubocop (= 1.4.2)
       rubocop-performance (= 1.9.1)
     thor (1.0.1)
+    thread-local (1.1.0)
     thread_safe (0.3.6)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)

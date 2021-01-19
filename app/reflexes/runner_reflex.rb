@@ -111,6 +111,9 @@ class RunnerReflex < ApplicationReflex
       }
     ).broadcast
 
+    # cable_ready.play_sound(src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3", id: 1).broadcast
+    # cable_ready.play_sound(src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3", id: 2).broadcast
+
     cable_ready.set_focus(selector: "#bottom").broadcast
 
     # cable_ready.outer_html(selector: "[data-controller=\"runner\"]", html: "<div data-controller=\"runner\"><button data-reflex=\"click->Runner#test\">Boo!</button></div>").broadcast
