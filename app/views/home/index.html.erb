@@ -744,7 +744,17 @@ Open Console Inspector to see logged messages.
   </tr>
 </table>
 
+<%# <div id="from">
+  <div id="graftee" data-controller="graft"></div>
+</div>
+<div id="to"></div>
+%>
+
+<div id="<%= dom_id(User.first) %>">Look at me</div>
+
 <br>
+
+<%# stream_from "i-am-a-teapot" %>
 
 <a href="#" target="_top" id="bottom">Back to top</a>
 

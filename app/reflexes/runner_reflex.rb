@@ -86,35 +86,39 @@ class RunnerReflex < ApplicationReflex
 
     cable_ready.clear_storage(type: "session").broadcast
 
-    cable_ready.console_log(message: "Log").broadcast
-    cable_ready.console_log(message: "Warn", level: "warn").broadcast
-    cable_ready.console_log(message: "Info", level: "info").broadcast
-    cable_ready.console_log(message: "Error", level: "error").broadcast
+    # cable_ready.console_log(message: "Log").broadcast
+    # cable_ready.console_log(message: "Warn", level: "warn").broadcast
+    # cable_ready.console_log(message: "Info", level: "info").broadcast
+    # cable_ready.console_log(message: "Error", level: "error").broadcast
 
-    cable_ready.notification(
-      title: "You are the worst.",
-      options: {
-        body: "This one gets cancelled like Kevin Spacey.",
-        icon: "https://source.unsplash.com/256x256",
-        vibrate: [200, 200, 200],
-        silent: false
-      }
-    ).broadcast
+    # cable_ready.notification(
+    #   title: "You are the worst.",
+    #   options: {
+    #     body: "This one gets cancelled like Kevin Spacey.",
+    #     icon: "https://source.unsplash.com/256x256",
+    #     vibrate: [200, 200, 200],
+    #     silent: false
+    #   }
+    # ).broadcast
 
-    cable_ready.notification(
-      title: "You are the best.",
-      options: {
-        body: "How does it feel to be your parents' favourite?",
-        icon: "https://source.unsplash.com/256x256",
-        vibrate: [200, 200, 200],
-        silent: false
-      }
-    ).broadcast
+    # cable_ready.notification(
+    #   title: "You are the best.",
+    #   options: {
+    #     body: "How does it feel to be your parents' favourite?",
+    #     icon: "https://source.unsplash.com/256x256",
+    #     vibrate: [200, 200, 200],
+    #     silent: false
+    #   }
+    # ).broadcast
 
     # cable_ready.play_sound(src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3", id: 1).broadcast
     # cable_ready.play_sound(src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3", id: 2).broadcast
 
     cable_ready.set_focus(selector: "#bottom").broadcast
+
+    # cable_ready.graft(selector: "#graftee", parent: "#to").broadcast
+
+    # cable_ready["i-am-a-teapot"].console_log(message: "yo").broadcast
 
     # cable_ready.outer_html(selector: "[data-controller=\"runner\"]", html: "<div data-controller=\"runner\"><button data-reflex=\"click->Runner#test\">Boo!</button></div>").broadcast
     # cable_ready.remove(selector: 'button').broadcast

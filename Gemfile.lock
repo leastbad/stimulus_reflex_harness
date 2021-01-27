@@ -1,19 +1,19 @@
 GIT
   remote: https://github.com/hopsoft/cable_ready.git
-  revision: 45c487645e5cce66216d2c2419556b305907368f
-  branch: hopsoft/custom-operations
+  revision: 2aa1597f7a6f3663bb4f1443b3bcf85eea6e7e90
+  branch: heads/joshleblanc/stream_from
   specs:
-    cable_ready (4.4.6)
+    cable_ready (4.5.0)
       rails (>= 5.2)
       thread-local (>= 1.1.0)
 
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: 17547c01b5fad845878e9fd0e5ecc09c292b6e14
-  branch: hopsoft/cr-conig
+  revision: 8824338fbc58ff26f6703762a9237bad0cc8d37c
+  branch: master
   specs:
-    stimulus_reflex (3.4.0)
-      cable_ready (>= 4.4)
+    stimulus_reflex (3.4.1)
+      cable_ready (>= 4.5)
       nokogiri
       rack
       rails (>= 5.2)
