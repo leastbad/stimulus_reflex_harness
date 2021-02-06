@@ -752,10 +752,16 @@ Open Console Inspector to see logged messages.
 
 <div id="<%= dom_id(User.first) %>">Look at me</div>
 
+<div id="users"></div>
+
+<div id="smelly"></div>
+
 <br>
 
-<%# stream_from "i-am-a-teapot" %>
+<%# <%= stream_from User.first, :i_am_a_teapot %>
 
 <a href="#" target="_top" id="bottom">Back to top</a>
+
+<button data-reflex="click->Runner#smelly">Smelly</button>
 
 <br><br><br><br>

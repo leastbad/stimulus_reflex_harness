@@ -6,15 +6,13 @@ import { definitionsFromContext } from 'stimulus/webpack-helpers'
 import StimulusReflex from 'stimulus_reflex'
 import consumer from '../channels/consumer'
 import controller from './application_controller'
-import stream_from from 'cable_ready/javascript/controllers/stream_from_controller'
 
 const application = Application.start()
 const context = require.context('controllers', true, /_controller\.js$/)
 application.load(definitionsFromContext(context))
-application.consumer = consumer
-application.register('stream-from', stream_from)
 StimulusReflex.initialize(application, {
   consumer,
   controller,
   debug: true
 })
+application.consumer = consumer

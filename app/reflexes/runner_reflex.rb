@@ -114,11 +114,14 @@ class RunnerReflex < ApplicationReflex
     # cable_ready.play_sound(src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3", id: 1).broadcast
     # cable_ready.play_sound(src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3", id: 2).broadcast
 
-    cable_ready.set_focus(selector: "#bottom").broadcast
+    # cable_ready.set_focus(selector: User.all).broadcast
+
+    # morph dom_id("#smelly"), wrap(render(User.all), User.all)
 
     # cable_ready.graft(selector: "#graftee", parent: "#to").broadcast
 
-    # cable_ready["i-am-a-teapot"].console_log(message: "yo").broadcast
+    # cable_ready[CableReady::Stream].console_log(message: "yo").broadcast_to(User.first)
+    # cable_ready[User.first, :i_am_a_teapot].console_log(message: "yo").broadcast
 
     # cable_ready.outer_html(selector: "[data-controller=\"runner\"]", html: "<div data-controller=\"runner\"><button data-reflex=\"click->Runner#test\">Boo!</button></div>").broadcast
     # cable_ready.remove(selector: 'button').broadcast
@@ -126,4 +129,9 @@ class RunnerReflex < ApplicationReflex
 
     morph :nothing
   end
+
+  # def smelly
+  #   cable_ready.set_focus("#smelly").inner_html(html: "<span>I rock</span>").set_style(name: "color", value: "red").text_content(selector: User.all, text: "Bloom").broadcast
+  #   morph :nothing
+  # end
 end

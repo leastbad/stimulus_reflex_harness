@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/hopsoft/cable_ready.git
-  revision: 2aa1597f7a6f3663bb4f1443b3bcf85eea6e7e90
-  branch: heads/joshleblanc/stream_from
+  revision: 88dba8e3a9026a4da14a1fab7b66ec645acb3bae
+  branch: master
   specs:
     cable_ready (4.5.0)
       rails (>= 5.2)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: 8824338fbc58ff26f6703762a9237bad0cc8d37c
+  revision: e2aec4b74199fd8769effdc3f5f80a67ecf64780
   branch: master
   specs:
     stimulus_reflex (3.4.1)
@@ -216,7 +216,7 @@ DEPENDENCIES
   listen (~> 3.2)
   pry-rails
   puma (~> 4.1)
-  rails (~> 6.0.3, >= 6.0.3.2)
+  rails (~> 6.0.3, >= 6.0.3.4)
   redis (>= 4.0)
   sqlite3 (~> 1.4)
   standard
@@ -225,7 +225,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.6.5p114
+   ruby 2.7.2p137
 
 BUNDLED WITH
    2.1.4
