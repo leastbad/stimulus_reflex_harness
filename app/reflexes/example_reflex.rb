@@ -4,6 +4,6 @@ class ExampleReflex < ApplicationReflex
   delegate :uuid, to: :connection
 
   def test
-    puts "We're live!"
+    morph "#replace-me", ""
   end
 end
