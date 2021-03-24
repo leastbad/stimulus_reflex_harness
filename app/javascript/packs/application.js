@@ -9,6 +9,6 @@ import { processElements } from 'cable_ready/javascript/utils'
 
 CableReady.DOMOperations.jazzHands = operation => {
   processElements(operation, element => {
-    console.log('Jazz hands!', element)
+    console.log('Jazz hands!')
   })
 }

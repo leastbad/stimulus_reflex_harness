@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/hopsoft/cable_ready.git
-  revision: 88dba8e3a9026a4da14a1fab7b66ec645acb3bae
-  branch: master
+  revision: 9b3435d97d1086b617a32b6558b9aa841a754721
+  branch: cable_car
   specs:
     cable_ready (4.5.0)
       rails (>= 5.2)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: e2aec4b74199fd8769effdc3f5f80a67ecf64780
+  revision: d86dd2d5237a2edf35c4fe16e680646946411cc9
   branch: master
   specs:
     stimulus_reflex (3.4.1)

@@ -758,10 +758,20 @@ Open Console Inspector to see logged messages.
 
 <br>
 
-<%# <%= stream_from User.first, :i_am_a_teapot %>
+<%# stream_from User.first, :i_am_a_teapot %>
 
 <a href="#" target="_top" id="bottom">Back to top</a>
 
 <button data-reflex="click->Runner#smelly">Smelly</button>
+
+<button data-reflex="click->Runner#chain">Chain</button>
+
+<button data-reflex="click->Runner#jazz">Jazz</button>
+
+<button data-controller="cable-car" data-action="cable-car#fetch">Cable Car</button>
+
+<button data-reflex="click->Runner#update_session">Session</button>
+
+<%= session[:test] %>
 
 <br><br><br><br>

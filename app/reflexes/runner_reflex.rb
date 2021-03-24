@@ -130,8 +130,26 @@ class RunnerReflex < ApplicationReflex
     morph :nothing
   end
 
-  # def smelly
-  #   cable_ready.set_focus("#smelly").inner_html(html: "<span>I rock</span>").set_style(name: "color", value: "red").text_content(selector: User.all, text: "Bloom").broadcast
-  #   morph :nothing
-  # end
+  def jazz
+    cable_ready.jazz_hands(selector: "#users").broadcast
+    morph :nothing
+  end
+
+  def smelly
+    cable_ready.set_focus("#smelly").inner_html(html: "<span>I rock</span>").set_style(name: "color", value: "red").text_content(selector: User.all, text: "Bloom").broadcast
+    morph :nothing
+  end
+
+  def chain
+    cable_ready[User.first, :i_am_a_teapot].console_log(message: "yo")
+    cable_ready.broadcast
+    morph :nothing
+  end
+
+  def update_session
+    redis_key = "stimulus_reflex:session:" + session.id.to_s
+    session[:test] = 666
+    Rails.cache.write redis_key, session.to_h.reject {|key| ["session_id", "_csrf_token"].include? key }.to_json
+    morph :nothing
+  end
 end
