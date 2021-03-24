@@ -1,5 +1,16 @@
-<button data-reflex="click->Example#test">Test</button>
+<h1>New Tweet</h1>
 
-<% if @stimulus_reflex %>
-  <h1>Success! Random: <%= (rand * 100).to_i %></h1>
-<% end %>
+<div class="field">
+  <%= label_tag :body %>
+  <%= text_area_tag :body, nil, placeholder: "Type a tweet", data: { reflex: "input->Composer#preview" } %>
+</div>
+
+<div class="actions">
+  <%= submit_tag "Create Tweet" %>
+</div>
+
+<div>
+  <strong id="preview"></strong>
+</div>
+
+<%= link_to 'Back', "#" %>
