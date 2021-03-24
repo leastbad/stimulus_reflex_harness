@@ -5,9 +5,9 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
-    "cable_ready": "hopsoft/cable_ready#master",
+    "cable_ready": "^4.5.0",
     "stimulus": "^1.1.1",
-    "stimulus_reflex": "hopsoft/stimulus_reflex#master"
+    "stimulus_reflex": "^3.4.1"
   },
   "version": "0.1.0",
   "devDependencies": {
