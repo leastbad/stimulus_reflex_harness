@@ -1,13 +1,16 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # config.session_store :cache_store,
-  #   key: "_harness_development",
-  #   compress: true,
-  #   pool_size: 5,
-  #   expire_after: 1.year
+  config.session_store :cache_store,
+    key: "_harness_development",
+    compress: true,
+    pool_size: 5,
+    expire_after: 1.year
 
-  Rails.application.config.session_store :cookie_store, key: '_harness_session'
+  config.action_controller.default_url_options = {host: "localhost", port: 3000}
+  # config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+
+  # Rails.application.config.session_store :cookie_store, key: '_harness_session'
 
   config.hosts << /[a-z0-9]+\.ngrok\.io/
 

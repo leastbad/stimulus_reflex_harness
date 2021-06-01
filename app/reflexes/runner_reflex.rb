@@ -131,7 +131,8 @@ class RunnerReflex < ApplicationReflex
   end
 
   def jazz
-    cable_ready.jazz_hands(selector: "#users").broadcast
+    cable_ready.jazz_hands(selector: "#users").broadcast # before the reflex finishes
+    cable_ready.jazz_hands(selector: "#users") # after the reflex finishes
     morph :nothing
   end
 
@@ -141,8 +142,12 @@ class RunnerReflex < ApplicationReflex
   end
 
   def chain
-    cable_ready[User.first, :i_am_a_teapot].console_log(message: "yo")
-    cable_ready.broadcast
+    cable_ready[:i_am_a_teapot].console_log(message: "symbol").broadcast
+    cable_ready[User.first].console_log(message: "resource").broadcast
+    cable_ready[User].console_log(message: "class constant").broadcast
+    cable_ready[User.first, :i_am_a_teapot].console_log(message: "resource, symbol").broadcast
+    cable_ready[:i_am_a_teapot, 69].console_log(message: "symbol, integer").broadcast
+    cable_ready[:i_am_a_teapot, :short, :stout].console_log(message: "symbol, symbol, symbol").broadcast
     morph :nothing
   end
 

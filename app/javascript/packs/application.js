@@ -7,7 +7,7 @@ Rails.start()
 import CableReady from 'cable_ready'
 import { processElements } from 'cable_ready/javascript/utils'
 
-CableReady.DOMOperations.jazzHands = operation => {
+CableReady.operations.jazzHands = operation => {
   processElements(operation, element => {
     console.log('Jazz hands!')
   })

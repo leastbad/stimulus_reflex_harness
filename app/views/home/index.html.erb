@@ -758,7 +758,12 @@ Open Console Inspector to see logged messages.
 
 <br>
 
-<%# stream_from User.first, :i_am_a_teapot %>
+<%= stream_from :i_am_a_teapot %>
+<%= stream_from User.first %>
+<%= stream_from User %>
+<%= stream_from User.first, :i_am_a_teapot %>
+<%= stream_from :i_am_a_teapot, 69 %>
+<%= stream_from :i_am_a_teapot, :short, :stout %>
 
 <a href="#" target="_top" id="bottom">Back to top</a>
 

@@ -13,9 +13,8 @@ class HomeController < ApplicationController
   # end
 
   def fetch
-    render json: cable_car
+    render operations: cable_car
       .inner_html(selector: "#users", html: "<span>winning</span>")
       .set_focus(selector: "#users")
-      .ride
   end
 end
