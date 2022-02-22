@@ -1,5 +1,6 @@
-<button data-reflex="click->Example#test">Test</button>
-
-<% if @stimulus_reflex %>
-  <h1>Success! Random: <%= (rand * 100).to_i %></h1>
-<% end %>
+<form>
+  <input type="text" data-reflex="input->Calc#sum" autofocus="true" placeholder="Type an integer"><br>
+  times<br>
+  <input type="text" name="multiplier" value="5">
+</form>
+<p>Result: <span id="result"></span></p>
