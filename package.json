@@ -5,10 +5,10 @@
     "@hotwired/turbo": "^7.1.0",
     "@rails/actioncable": "^6.1.3",
     "@rails/webpacker": "5.4.3",
-    "cable_ready": "5.0.0-pre8",
+    "cable_ready": "5.0.0-pre9",
     "mrujs": "^0.7.1",
     "stimulus": "^3.0.1",
-    "stimulus_reflex": "3.5.0-pre8",
+    "stimulus_reflex": "3.5.0-pre9",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },

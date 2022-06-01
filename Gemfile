@@ -10,8 +10,8 @@ gem 'webpacker', '~> 5.4.3'
 gem "redis", ">= 4.2.5", :require => ["redis", "redis/connection/hiredis"]
 gem "hiredis"
 
-gem "cable_ready", "5.0.0.pre8"
-gem "stimulus_reflex", "3.5.0.pre8"
+gem "cable_ready", "5.0.0.pre9"
+gem "stimulus_reflex", "3.5.0.pre9"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
