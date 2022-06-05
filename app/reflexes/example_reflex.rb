@@ -5,5 +5,6 @@ class ExampleReflex < ApplicationReflex
 
   def test
     puts "We're live!"
+    cable_ready.invoke_method(receiver: "window", method: "alert", arguments: ["Hello, world!"]).broadcast
   end
 end
